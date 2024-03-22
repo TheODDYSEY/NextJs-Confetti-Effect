@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**Confetti Button Component**
 
-## Getting Started
+This React component creates a button that, when clicked, activates a confetti effect. It utilizes CSS animations and dynamic DOM manipulation to generate colorful confetti shapes that fall from the top of the screen to the bottom.
 
-First, run the development server:
+### Usage
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Install dependencies:
+   - React
+   - Next.js
+   - Tailwind CSS
+
+2. Import the `ConfettiButton` component into your application.
+
+3. Place the `ConfettiButton` component within your desired page or component to enable the confetti effect.
+
+### Example
+
+```jsx
+// Import the ConfettiButton component
+import ConfettiButton from '@/components/confetti-button';
+
+// Create a page or component
+export default function HomePage() {
+  return (
+    <main className="min-h-screen flex flex-col text-center justify-center items-center">
+      {/* Add the ConfettiButton component */}
+      <ConfettiButton />
+    </main>
+  );
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- React: "^17.0.2"
+- Next.js: "^12.0.7"
+- Tailwind CSS: "^3.0.5"
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Components
 
-## Learn More
+#### `ConfettiButton`
 
-To learn more about Next.js, take a look at the following resources:
+This component creates a button that, when clicked, activates a confetti effect.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Props:
+  - None
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### CSS Styles
 
-## Deploy on Vercel
+The component utilizes Tailwind CSS for styling, including global styles defined in `globals.css` and custom styles for the confetti effect.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Implementation Details
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The confetti effect is triggered when the button is clicked.
+- Confetti shapes (squares and triangles) are dynamically generated and animated using CSS.
+- Each confetti element is positioned randomly within the viewport and falls from top to bottom.
+- Confetti elements are removed from the DOM after a set duration (4 seconds).
+
